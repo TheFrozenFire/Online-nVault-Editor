@@ -5,3 +5,10 @@ body {
 .ui-tabs .ui-tabs-hide {
      display: none;
 }
+
+form[title]:before {
+	content: attr(title);
+	
+	display: block;
+	font-size: large;
+}

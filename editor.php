@@ -29,8 +29,7 @@ require_once("includes/layout/header.php");
 				<li><a href="#objectEditorTabSearch">Search</a></li>
 			</ul>
 			<div id="objectEditorTabMain" class="objectEditorTab">
-				<ol class="objectEditorPages"></ol>
-				<div class="objectEditorPageView"></div>
+				
 			</div>
 			<div id="objectEditorTabSearch" class="objectEditorTab">
 				Search.

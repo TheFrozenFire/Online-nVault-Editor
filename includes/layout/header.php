@@ -15,3 +15,7 @@ if(is_array($additional_headers)) foreach($additional_headers as $entry) {
 ?>
 	</head>
 	<body>
+		<div id="header">
+			<h1>nVault Decoder/Encoder</h1>
+		</div>
+		<div id="content">
