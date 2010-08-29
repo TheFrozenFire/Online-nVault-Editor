@@ -1,7 +1,6 @@
 div#objectLoader {
 	display: block;
 	width: 90%;
-	min-height: 40px;
 	padding: 5px;
 	margin-left: auto;
 	margin-right: auto;
@@ -15,17 +14,20 @@ div#objectLoader form {
 }
 div#objectLoader div {
 	display: inline;
-	width: 49%;
+	visibility: hidden;
 	float: right;
 	text-align: right;
+	line-height: 2em;
 }
 div#objectLoader div span {
 	margin-left: 5px;
 	margin-right: 5px;
+	font-weight: bold;
 }
 
 div#objectExporter {
 	display: block;
+	visibility: hidden;
 	width: 90%;
 	padding: 5px;
 	margin-left: auto;
@@ -44,54 +46,13 @@ div#objectExporter form {
 	text-align: center;
 }
 
-div#objectEditor {
-	display: block;
-	width: 90%;
-	min-height: 500px;
-	padding: 5px;
+
+div#objectView {
+	visibility: hidden;
+	width: 85%;
 	margin-left: auto;
 	margin-right: auto;
-}
-div#objectEditor ul#objectEditorTabs {
-	width: 100%;
-	
-	margin: 0;
-}
-div#objectEditor ul#objectEditorTabs, div#objectEditor ul#objectEditorTabs li {
-	display: inline;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	padding-left: 5px;
-}
-div#objectEditor ul#objectEditorTabs a:link, div#objectEditor ul#objectEditorTabs a:visited {
-	background: #FFFFFF;
-	border: 1px solid #3F4658;
-	color: #666;
-	font-size: small;
-	font-weight: normal;
-	line-height: 14px;
-	margin-right: 8px;
-	padding: 2px 10px 2px 10px;
-	text-decoration: none;
-}
-div#objectEditor ul#objectEditorTabs a:link.objectEditorTabCurrent, div#objectEditor ul#objectEditorTabs a:visited.objectEditorTabCurrent {
-	background: #E8EBF0;
-	border-bottom: 1px solid #E8EBF0;
-	color: #000000;
-}
-div#objectEditor div.objectEditorTab {
-	width: 100%;
-	min-height: 400px;
+	padding: 1em;
+	background-color: #AEAE8C;
 	border: 2px solid #3F4658;
-	background-color: #DBE0E6;
-}
-
-ol.objectEditorPages {
-	width: 15%;
-	height: 100%;
-	margin: 0;
-	padding-top: 5px;
-	
-	border-right: 2px solid #000000;
 }

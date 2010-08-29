@@ -1,7 +1,9 @@
 <?php
 $additional_headers[] = "<script type=\"text/javascript\" src=\"layout/javascript/jquery.getUrlParam.js\"></script>";
 $additional_headers[] = "<script type=\"text/javascript\" src=\"layout/javascript/editor.js\"></script>";
-$additional_headers[] = "<link rel=\"stylesheet\" href=\"layout/css/editor.css\"></script>";
+$additional_headers[] = "<script type=\"text/javascript\" src=\"layout/javascript/jquery.dataTables.min.js\"></script>";
+$additional_headers[] = "<link rel=\"stylesheet\" href=\"layout/css/editor.css\">";
+$additional_headers[] = "<link rel=\"stylesheet\" href=\"layout/css/dataTables.css\">";
 require_once("includes/layout/header.php");
 ?>
 		<div id="objectLoader">
@@ -12,28 +14,21 @@ require_once("includes/layout/header.php");
 			</form>
 			<div>
 				Vault Code: <span id="objectLoaderVaultCode"></span>
-				Last Modified: <span id="objectLoaderVaultTime"></span>
+				Date Added: <span id="objectLoaderVaultTime"></span>
 				Vault Size: <span id="objectLoaderVaultSize"></span>
 			</div>
 		</div>
 		<div id="objectExporter">
 			<form>
+				<input type="submit" value="nVault">
 				<input type="submit" value="JSON">
 				<input type="submit" value="XML">
 				<input type="submit" value="Tab-Delimited">
 			</form>
 		</div>
-		<div id="objectEditor">
-			<ul id="objectEditorTabs">
-				<li><a href="#objectEditorTabMain" class="objectEditorTabCurrent">Main</a></li>
-				<li><a href="#objectEditorTabSearch">Search</a></li>
-			</ul>
-			<div id="objectEditorTabMain" class="objectEditorTab">
-				
-			</div>
-			<div id="objectEditorTabSearch" class="objectEditorTab">
-				Search.
-			</div>
+		<div id="objectView">
+			<table id="objectEditor" class="display">
+			</table>
 		</div>
 <?php
 require_once("includes/layout/footer.php");

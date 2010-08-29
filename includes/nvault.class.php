@@ -54,7 +54,7 @@ class nVault {
 			$key = fread($vault, $keylen);
 			$val = fread($vault, $vallen);
 			
-			$this->vault[] = array('key'=>$key, 'time'=>$timestamp, 'value'=>$val);
+			$this->vault[] = array($key, $timestamp, $val);
 		}
 		
 		return 1;
@@ -68,11 +68,11 @@ class nVault {
 		$vault = $magic.$version.$entries;
 		
 		foreach($this->vault as $entry) {
-			$timestamp = pack(($this->endian)?"V":"N", $entry['time']);
-			$keylen = pack("C", strlen($entry['key']));
-			$vallen = pack(($this->endian)?"v":"n", strlen($entry['value']));
+			$timestamp = pack(($this->endian)?"V":"N", $entry[1]);
+			$keylen = pack("C", strlen($entry[0]));
+			$vallen = pack(($this->endian)?"v":"n", strlen($entry[2]));
 			
-			$vault .= $timestamp.$keylen.$vallen.$entry['key'].$entry['value'];
+			$vault .= $timestamp.$keylen.$vallen.$entry[0].$entry[2];
 		}
 		
 		return $vault;
