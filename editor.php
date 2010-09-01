@@ -2,6 +2,7 @@
 $additional_headers[] = "<script type=\"text/javascript\" src=\"layout/javascript/jquery.getUrlParam.js\"></script>";
 $additional_headers[] = "<script type=\"text/javascript\" src=\"layout/javascript/editor.js\"></script>";
 $additional_headers[] = "<script type=\"text/javascript\" src=\"layout/javascript/jquery.dataTables.min.js\"></script>";
+$additional_headers[] = "<script type=\"text/javascript\" src=\"layout/javascript/jquery.jeditable.min.js\"></script>";
 $additional_headers[] = "<link rel=\"stylesheet\" href=\"layout/css/editor.css\">";
 $additional_headers[] = "<link rel=\"stylesheet\" href=\"layout/css/dataTables.css\">";
 require_once("includes/layout/header.php");
