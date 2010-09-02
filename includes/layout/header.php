@@ -5,6 +5,7 @@
 		<script type="text/javascript" src="layout/javascript/jquery.js"></script>
 		<script type="text/javascript" src="layout/javascript/jqueryui.js"></script>
 		<link rel="stylesheet" href="layout/css/main.css">
+		<link rel="stylesheet" href="layout/css/pepper-grinder/jquery-ui-1.8.4.custom.css">
 <?php
 if(is_array($additional_headers)) foreach($additional_headers as $entry) {
 ?>
@@ -18,4 +19,3 @@ if(is_array($additional_headers)) foreach($additional_headers as $entry) {
 		<div id="header">
 			<h1>nVault Decoder/Encoder</h1>
 		</div>
-		<div id="content">

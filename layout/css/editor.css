@@ -26,12 +26,10 @@ div#objectLoader div span {
 }
 
 div#objectExporter {
-	display: none;
 	width: 90%;
 	padding: 5px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 10px;
 	
 	background-color: #BEEA93;
 	border-left: 2px solid #3F4658;
@@ -45,19 +43,62 @@ div#objectExporter form {
 	text-align: center;
 }
 
+div#instructions {
+	width: 90%;
+	margin: 10px auto;
+	padding: 5px;
+	background-color: #AEAE8C;
+	border: 2px solid #3F4658;
+}
+
 div#objectView {
-	display: none;
-	width: 85%;
+	width: 89%;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1em;
 	background-color: #AEAE8C;
 	border: 2px solid #3F4658;
 }
+div#objectView>div {
+	padding: 1em;
+}
+
+div.settingsToolbar {
+	float: left;
+	margin-left: 1em;
+	margin-right: 3em;
+	line-height: 3em;
+}
+
+div.saveState {
+	float: right;
+	margin-left: 1em;
+}
+div.saveState input {
+	border: 1px solid #3F4658;
+	margin: 0;
+}
+
+table#objectEditor td>input {
+	font-size: small;
+	padding: 0;
+	margin: 0;
+	border: none;
+	background-color: #CCFFCC;
+}
+
+a.rowRemoveLink {
+	float: left;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+a.rowRemoveLink img {
+	height: 12px;
+}
 
 div#loading {
 	display: none;
-	background-color: #3F4658;
 	width: 30px;
 	height: 30px;
 	margin: 20% auto;
@@ -66,4 +107,8 @@ div#loading img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.displayOnLoad {
+	display: none;
 }

@@ -1,9 +1,32 @@
 body {
 	background-color: #5B5E5A;
+	margin: 0;
 }
 
-.ui-tabs .ui-tabs-hide {
-     display: none;
+div#header {
+	display: block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-top: 0;
+	background-color: #9DA99F;
+	border-top: none;
+	border-bottom: 3px solid #3F4658;
+	text-align: center;
+}
+div#header h1 {
+	margin: 0;
+}
+
+div#content {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	background-color: #AEAE8C;
+	border: 2px solid #3F4658;
+	padding: 5px;
 }
 
 form[title]:before {

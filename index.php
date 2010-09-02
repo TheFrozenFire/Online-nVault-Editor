@@ -1,6 +1,7 @@
 <?php
 require_once("includes/layout/header.php");
 ?>
+		<div id="content" class="ui-corner-all">
 			<form method="GET" action="editor.php" title="Edit Existing nVault" id="nvaultEdit">
 				<label for="nvaultID">nVault ID:</label>
 				<input type="text" id="nvaultID" name="nvaultID">
@@ -16,6 +17,7 @@ require_once("includes/layout/header.php");
 			
 				<input type="submit" value="Decode nVault">
 			</form>
+		</div>
 <?php
 require_once("includes/layout/footer.php");
 ?>
