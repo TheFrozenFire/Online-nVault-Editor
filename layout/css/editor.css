@@ -45,17 +45,17 @@ div#objectExporter form {
 
 div#instructions {
 	width: 90%;
-	margin: 10px auto;
+	margin: 3px auto;
 	padding: 5px;
 	background-color: #AEAE8C;
 	border: 2px solid #3F4658;
 }
 
 div#objectView {
-	width: 89%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 1em;
+	padding: 0.25em;
 	background-color: #AEAE8C;
 	border: 2px solid #3F4658;
 }
@@ -69,14 +69,8 @@ div.settingsToolbar {
 	margin-right: 3em;
 	line-height: 3em;
 }
-
-div.saveState {
-	float: right;
-	margin-left: 1em;
-}
-div.saveState input {
-	border: 1px solid #3F4658;
-	margin: 0;
+div.settingsToolbar input[type=submit] {
+	padding: 1px;
 }
 
 table#objectEditor td>input {

@@ -32,12 +32,51 @@ function loadObject(code) {
 		
 		$("#objectLoader div").css("visibility", "visible");
 		
+		var newRowDialog = $(document.createElement("div"));
+		newRowDialog.attr("id", "newRowDialog");
+		var newRowForm = $(document.createElement("form"));
+		newRowDialog.append(newRowForm);
+		
+		newRowDialog.addClass("ui-dialog");
+		
+		newRowForm.html("<label for=\"newRowKey\">Key:</label><input type=\"text\" id=\"newRowKey\"><label for=\"newRowValue\">Value:</label><input type=\"text\" id=\"newRowValue\">");
+		newRowForm.children("input").css("display", "block");
+		
+		$("body").append(newRowDialog);
+		newRowDialog.dialog({
+			"autoOpen": false,
+			"height": "300",
+			"width": "50%",
+			"modal": true,
+			"title": "New Entry",
+			"buttons": {
+				"Add Entry": function() {
+					if($("input#newRowKey").val().length > 0) {
+						var date = new Date();
+						$("#objectEditor").dataTable().fnAddData([
+							$("input#newRowKey").val(),
+							date.getTime()/1000,
+							$("input#newRowValue").val()
+						]);
+					}
+					$(this).dialog("close");
+				},
+				"Cancel": function() {
+					$(this).dialog("close");
+				}
+			},
+			"close": function() {
+				$("input#newRowKey, input#newRowValue").val("");
+			}
+		});
+		
 		$("#objectEditor").dataTable({
 			"aaData": data["object"],
 			"aoColumns": [
 				{ "sTitle": "Key" },
 				{
 					"sTitle": "Modified",
+					"bUseRendered": false,
 					"fnRender": function(obj) {
 						var time = obj.aData[ obj.iDataColumn ];
 						var date = new Date();
@@ -53,13 +92,18 @@ function loadObject(code) {
 			"bAutoWidth": false,
 			"bJQueryUI": true,
 			"sPaginationType": "full_numbers",
-			"sDom": "<\"settingsToolbar\"><\"H\"lfr>t<\"F\"i<\"saveState\">p>"
+			"sDom": "<\"settingsToolbar\"><\"H\"lfr>t<\"F\"ip>"
 		});
 		
-		$("div.settingsToolbar").html("<form><label for=\"objectEditorAutoUpdateModification\">Auto-Update Modification Time</label><input type=\"checkbox\" id=\"objectEditorAutoUpdateModification\" checked></form>");
-		$("div.saveState").html("<form><input type=\"submit\" value=\"Save State\"></form>");
+		$("div.settingsToolbar").html("<form><label for=\"objectEditorAutoUpdateModification\">Auto-Update Modification Time</label><input type=\"checkbox\" id=\"objectEditorAutoUpdateModification\" checked><input type=\"submit\" id=\"newRow\" value=\"New Entry\"><input type=\"submit\" id=\"saveState\" value=\"Save State\"></form>");
 		
-		$("div.saveState form").submit(function() {
+		$("div.settingsToolbar form").submit(function() { return false; });
+		$("div.settingsToolbar input:submit#newRow").button().click(function() {
+			$("#newRowDialog").dialog("open");
+			$(this).blur();
+		});
+		
+		$("div.settingsToolbar input:submit#saveState").button().click(function() {
 			$("input:submit", this).attr("disabled", true);
 			var data = $("#objectEditor").dataTable().fnGetData();
 			for(var row = 0; row < data.length; row++) data[row][1] = parseInt(Date.parse(data[row][1])/1000);
@@ -69,12 +113,10 @@ function loadObject(code) {
 					"data": JSON.stringify(data)
 				},
 				function(code) {
-					$("div.saveState form input:submit").attr("disabled", "false");
+					$("div.settingsToolbar input:submit#saveState").attr("disabled", "false");
 					$("#nvaultID").val(code).submit();
 				}
 			);
-	
-			return false;
 		});
 		
 		$(".displayOnLoad").show("fast");
