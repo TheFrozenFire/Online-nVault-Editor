@@ -12,7 +12,8 @@ require_once("includes/layout/header.php");
 			<form>
 				<label for="nvaultID">nVault ID:</label>
 				<input type="text" id="nvaultID">
-				<input type="submit" value="Load">
+				<input type="submit" id="loadVault" value="Load">
+				<input type="submit" id="newVault" value="New">
 			</form>
 			<div>
 				Vault Code: <span id="objectLoaderVaultCode"></span>
